@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 
 extern "C" {
-#include "../BCSRec/main.h"
+#include "../BCSRec/main.c"
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -12,10 +12,10 @@ namespace UnitTest
 	TEST_CLASS(BCSREC_functions)
 	{
 	public:
-		
+
 		TEST_METHOD(getPerimeter_test)
 		{
-			
+
 			int length = 8;
 			int width = 12;
 			int perimeter = getPerimeter(&length, &width);
@@ -39,7 +39,7 @@ namespace UnitTest
 			int input = 36;
 			int length = 0;
 			setLength(input, &length);
-			Assert::AreEqual(length, 12);
+			Assert::AreEqual(length, 36);
 		}
 		TEST_METHOD(setLength_test_for_negative)
 		{
@@ -79,3 +79,4 @@ namespace UnitTest
 
 
 	};
+}
